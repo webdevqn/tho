@@ -12,22 +12,22 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url();?>assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="<?php echo base_url();?>assets/dist/css/timeline.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/admin/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url();?>assets/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/admin/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url();?>assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -920,21 +920,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url();?>assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="<?php echo base_url();?>assets/bower_components/raphael/raphael-min.js"></script>
-    <script src="<?php echo base_url();?>assets/bower_components/morrisjs/morris.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/morris-data.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/bower_components/raphael/raphael-min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/bower_components/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url();?>assets/dist/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/dist/js/sb-admin-2.js"></script>
 
 </body>
 
