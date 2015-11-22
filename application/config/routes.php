@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['api/v1/user.list'] = 'api/v1/user/user_list';
 $route['api/v1/user.check'] = 'api/v1/user/user_check';
+$route['api/v1/role.list'] = 'api/v1/user/role_list';
+$route['api/v1/role.add'] = 'api/v1/user/role_add';

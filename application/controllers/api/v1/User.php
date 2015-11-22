@@ -4,8 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('User_model');
+    }
+
     public function index() {
-        
+        echo 23423;
     }
 
     public function user_list() {
@@ -61,6 +66,50 @@ class User extends CI_Controller {
                     ->set_content_type('application/json')
                     ->set_output(json_encode($request));
         }
+    }
+
+    public function role_list() {
+        $output = array(
+            'code' => 200,
+            'status' => 'SUCCESS',
+            'message' => 'List of roles',
+            'data' => $this->User_model->role_list()
+        );
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($output));
+    }
+
+    public function role_add() {
+        $title = $this->input->post('title');
+        if (isset($title) && !is_null($title)) {
+            $request = $this->User_model->role_add($title);
+            if ($request == 200) {
+                $output = array(
+                    'code' => $request,
+                    'status' => 'SUCCESS',
+                    'message' => 'Add role successfully',
+                    'data' => array('title' => $title)
+                );
+            } else {
+                $output = array(
+                    'code' => $request,
+                    'status' => 'FAILED',
+                    'message' => 'Server Error',
+                    'data' => array('title' => $title)
+                );
+            }
+        } else {
+            $request = 400;
+            $output = array(
+                'code' => $request,
+                'status' => 'FAILED',
+                'message' => 'Missing parameters'
+            );
+        }
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($output));
     }
 
 }
