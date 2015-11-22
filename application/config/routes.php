@@ -53,3 +53,4 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['api/v1/user.list'] = 'api/v1/user/user_list';
+$route['api/v1/user.check'] = 'api/v1/user/user_check';

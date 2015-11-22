@@ -53,9 +53,14 @@ class User extends CI_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode($output));
     }
-    
+
     public function user_check() {
-        $user_name = "";                
+        if ($this->input->is_ajax_request()) {
+            $request = $this->input->post(NULL, TRUE);
+            $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($request));
+        }
     }
 
 }
