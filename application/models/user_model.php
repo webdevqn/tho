@@ -72,5 +72,10 @@ class User_model extends CI_Model {
         $fields = $this->db->field_data('roles');
         return $fields;
     }
+    
+    public function user_table_structure() {
+        $fields = $this->db->field_data('users');
+        return $fields;
+    }
 
 }

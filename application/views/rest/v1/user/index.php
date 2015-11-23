@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>API</title>
+        <title>RESTs</title>
         <link rel=stylesheet href="<?php echo base_url(); ?>assets/normal/css/bootstrap.min.css" >
     </head>
     <body>
@@ -30,17 +30,17 @@ and open the template in the editor.
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($columns as $column) {
+                    foreach ($roles as $role) {
                         ?>
                         <tr>
                             <td>
-                                <?php echo $column->name; ?>
+                                <?php echo $role->name; ?>
                             </td>
                             <td>
-                                <?php echo $column->type; ?>
+                                <?php echo $role->type; ?>
                             </td>
                             <td>
-                                <?php echo $column->max_length; ?>
+                                <?php echo $role->max_length; ?>
                             </td>
                         </tr>
 
@@ -51,8 +51,8 @@ and open the template in the editor.
                 </table>
             </div>
             <div class="row">
-                <a href="#" id="role_list">user.list</a>                
-                <table id="role_list_table" class="table table-bordered">
+                <a href="#" id="user_list">user.list</a>                
+                <table id="user_list_table" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>
@@ -68,17 +68,17 @@ and open the template in the editor.
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($columns as $column) {
+                    foreach ($users as $user) {
                         ?>
                         <tr>
                             <td>
-                                <?php echo $column->name; ?>
+                                <?php echo $user->name; ?>
                             </td>
                             <td>
-                                <?php echo $column->type; ?>
+                                <?php echo $user->type; ?>
                             </td>
                             <td>
-                                <?php echo $column->max_length; ?>
+                                <?php echo $user->max_length; ?>
                             </td>
                         </tr>
 
@@ -95,8 +95,12 @@ and open the template in the editor.
         <script>
             $(document).ready(function () {
                 $('#role_list_table').hide();
+                $('#user_list_table').hide();
                 $('#role_list').click(function () {
                     $('#role_list_table').toggle();
+                });
+                $('#user_list').click(function () {
+                    $('#user_list_table').toggle();
                 });
             });
         </script>

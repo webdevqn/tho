@@ -9,8 +9,9 @@ class User extends CI_Controller {
     }
     
     public function index() {
-        $data['columns'] = $this->User_model->role_table_structure();
-        $this->load->view('rest/v1/user/role_list', $data);
+        $data['roles'] = $this->User_model->role_table_structure();
+        $data['users'] = $this->User_model->user_table_structure();
+        $this->load->view('rest/v1/user/index', $data);
     }
 
 }
