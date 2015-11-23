@@ -15,9 +15,8 @@ class User_model extends CI_Model {
         } else {
             return 400;
         }
-        
     }
-    
+
     public function role_check($id) {
         $query = $this->db->where('id', $id)->get('roles');
         if (count($query->result_array()) > 0) {
@@ -47,7 +46,7 @@ class User_model extends CI_Model {
             return 400;
         }
     }
-    
+
     public function role_edit($id, $title) {
         $input = array(
             'title' => $title
@@ -59,7 +58,7 @@ class User_model extends CI_Model {
             return 400;
         }
     }
-    
+
     public function role_delete($id) {
         $query = $this->db->delete('roles', array('id' => $id));
         if ($query) {
@@ -67,6 +66,11 @@ class User_model extends CI_Model {
         } else {
             return 400;
         }
+    }
+
+    public function role_table_structure() {
+        $fields = $this->db->field_data('roles');
+        return $fields;
     }
 
 }

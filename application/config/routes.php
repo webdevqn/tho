@@ -52,10 +52,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['api/v1/user.list'] = 'api/v1/user/user_list';
-$route['api/v1/user.check'] = 'api/v1/user/user_check';
-$route['api/v1/role.list'] = 'api/v1/user/role_list';
-$route['api/v1/role.add'] = 'api/v1/user/role_add';
-$route['api/v1/role.detail'] = 'api/v1/user/role_detail';
-$route['api/v1/role.edit'] = 'api/v1/user/role_edit';
-$route['api/v1/role.delete'] = 'api/v1/user/role_delete';
+
+#APIs
+
+#User
+$route['api/v1/user.list']      = 'api/v1/user/user_list';
+$route['api/v1/user.check']     = 'api/v1/user/user_check';
+
+#Role
+$route['api/v1/role.list']      = 'api/v1/user/role_list';
+$route['api/v1/role.add']       = 'api/v1/user/role_add';
+$route['api/v1/role.detail']    = 'api/v1/user/role_detail';
+$route['api/v1/role.edit']      = 'api/v1/user/role_edit';
+$route['api/v1/role.delete']    = 'api/v1/user/role_delete';
+
+#RESTs
+
+#Role
+$route['rest/v1/role.list']     = 'rest/v1/user/role_list';
+$route['rest/v1/role.add']      = 'rest/v1/user/role_add';
+$route['rest/v1/role.detail']   = 'rest/v1/user/role_detail';
+$route['rest/v1/role.edit']     = 'rest/v1/user/role_edit';
+$route['rest/v1/role.delete']   = 'rest/v1/user/role_delete';
