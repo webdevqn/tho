@@ -23,5 +23,6 @@ class Dashboard extends CI_Controller {
         $data['test'] = [1,2,3,4];
         $this->output->set_template('admin');
 		$this->load->view('admin/dashboard_view', $data);
+                
 	}
 }

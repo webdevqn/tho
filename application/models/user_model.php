@@ -10,11 +10,30 @@ class User_model extends CI_Model {
 
     public function role_list() {
         $query = $this->db->get('roles');
-        return $query->result_array();
+        if ($query) {
+            return $query->result_array();
+        } else {
+            return 400;
+        }
+        
+    }
+    
+    public function role_check($id) {
+        $query = $this->db->where('id', $id)->get('roles');
+        if (count($query->result_array()) > 0) {
+            return 200;
+        } else {
+            return 400;
+        }
     }
 
-    public function role_detail() {
-        
+    public function role_detail($id) {
+        $query = $this->db->where('id', $id)->get('roles');
+        if (count($query->result_array()) > 0) {
+            return $query->result_array();
+        } else {
+            return 400;
+        }
     }
 
     public function role_add($title) {
@@ -25,12 +44,29 @@ class User_model extends CI_Model {
         if ($query) {
             return 200;
         } else {
-            return 401;
+            return 400;
         }
     }
     
-    public function role_delete() {
-        
+    public function role_edit($id, $title) {
+        $input = array(
+            'title' => $title
+        );
+        $query = $this->db->update('roles', $input, array('id' => $id));
+        if ($query) {
+            return 200;
+        } else {
+            return 400;
+        }
+    }
+    
+    public function role_delete($id) {
+        $query = $this->db->delete('roles', array('id' => $id));
+        if ($query) {
+            return 200;
+        } else {
+            return 400;
+        }
     }
 
 }

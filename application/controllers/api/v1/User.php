@@ -69,12 +69,21 @@ class User extends CI_Controller {
     }
 
     public function role_list() {
-        $output = array(
-            'code' => 200,
-            'status' => 'SUCCESS',
-            'message' => 'List of roles',
-            'data' => $this->User_model->role_list()
-        );
+        $response = $this->User_model->role_list();
+        if ($response != 400) {
+            $output = array(
+                'code' => 200,
+                'status' => 'SUCCESS',
+                'message' => 'List of roles',
+                'data' => $this->User_model->role_list()
+            );
+        } else {
+            $output = array(
+                'code' => 400,
+                'status' => 'FAILED',
+                'message' => 'Failed to get role list'
+            );
+        }
         $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode($output));
@@ -97,6 +106,131 @@ class User extends CI_Controller {
                     'status' => 'FAILED',
                     'message' => 'Server Error',
                     'data' => array('title' => $title)
+                );
+            }
+        } else {
+            $request = 400;
+            $output = array(
+                'code' => $request,
+                'status' => 'FAILED',
+                'message' => 'Missing parameters'
+            );
+        }
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($output));
+    }
+
+    public function role_detail() {
+        $id = $this->input->post('id');
+        if (isset($id) && !is_null($id) && is_numeric($id) && intval($id) > 0) {
+            $request = $this->User_model->role_check($id);
+            if ($request == 200) {
+                $request1 = $this->User_model->role_detail($id);
+                if ($request1 != 400) {
+                    $output = array(
+                        'code' => $request,
+                        'status' => 'SUCCESS',
+                        'message' => 'Role detail',
+                        'data' => $this->User_model->role_detail($id)
+                    );
+                } else {
+                    $output = array(
+                        'code' => $request,
+                        'status' => 'FAILED',
+                        'message' => 'Failed to get role detail',
+                        'data' => array('id' => $id)
+                    );
+                }
+            } else {
+                $output = array(
+                    'code' => $request,
+                    'status' => 'FAILED',
+                    'message' => 'Role ID did not exist'
+                );
+            }
+        } else {
+            $output = array(
+                'code' => 400,
+                'status' => 'FAILED',
+                'message' => 'Role ID is not in right format'
+            );
+        }
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($output));
+    }
+
+    public function role_delete() {
+        $id = $this->input->post('id');
+        if (isset($id) && !is_null($id) && is_numeric($id) && intval($id) > 0) {
+            $request = $this->User_model->role_check($id);
+            if ($request == 200) {
+                $request1 = $this->User_model->role_delete($id);
+                if ($request1 == 200) {
+                    $output = array(
+                        'code' => $request1,
+                        'status' => 'SUCCESS',
+                        'message' => 'Delete role successfully',
+                        'data' => array('id' => $id)
+                    );
+                } else {
+                    $output = array(
+                        'code' => $request1,
+                        'status' => 'FAILED',
+                        'message' => 'Failed to delete role',
+                        'data' => array('id' => $id)
+                    );
+                }
+            } else {
+                $output = array(
+                    'code' => $request,
+                    'status' => 'FAILED',
+                    'message' => 'Role ID did not exist'
+                );
+            }
+        } else {
+            $output = array(
+                'code' => 400,
+                'status' => 'FAILED',
+                'message' => 'Role ID is not in right format'
+            );
+        }
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($output));
+    }
+
+    public function role_edit() {
+        $id = $this->input->post('id');
+        $title = $this->input->post('title');
+        if (isset($id) && isset($title) && is_numeric($id) && intval($id) > 0) {
+            $request = $this->User_model->role_check($id);
+            if ($request == 200) {
+                $request1 = $this->User_model->role_edit($id, $title);
+                if ($request1 == 200) {
+                    $output = array(
+                        'code' => $request,
+                        'status' => 'SUCCESS',
+                        'message' => 'Update role successfully',
+                        'data' => array(
+                            'id' => $id,
+                            'title' => $title
+                        )
+                    );
+                } else {
+                    $output = array(
+                        'code' => $request,
+                        'status' => 'FAILED',
+                        'message' => 'Failed to update role',
+                        'data' => array('title' => $title)
+                    );
+                }
+            } else {
+                $output = array(
+                    'code' => $request,
+                    'status' => 'FAILED',
+                    'message' => 'Role ID did not exist'
                 );
             }
         } else {

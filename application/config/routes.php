@@ -56,3 +56,6 @@ $route['api/v1/user.list'] = 'api/v1/user/user_list';
 $route['api/v1/user.check'] = 'api/v1/user/user_check';
 $route['api/v1/role.list'] = 'api/v1/user/role_list';
 $route['api/v1/role.add'] = 'api/v1/user/role_add';
+$route['api/v1/role.detail'] = 'api/v1/user/role_detail';
+$route['api/v1/role.edit'] = 'api/v1/user/role_edit';
+$route['api/v1/role.delete'] = 'api/v1/user/role_delete';
