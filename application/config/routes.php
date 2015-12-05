@@ -71,6 +71,20 @@ $route['api/v1/role.detail'] = 'api/v1/user/role_detail';
 $route['api/v1/role.edit'] = 'api/v1/user/role_edit';
 $route['api/v1/role.delete'] = 'api/v1/user/role_delete';
 
+#Category
+$route['api/v1/category.list'] =    'api/v1/user/category_list';
+$route['api/v1/category.add'] =     'api/v1/user/category_add';
+$route['api/v1/category.detail'] =  'api/v1/user/category_detail';
+$route['api/v1/category.edit'] =    'api/v1/user/category_edit';
+$route['api/v1/category.delete'] =  'api/v1/user/category_delete';
+
+#Category
+$route['api/v1/product.list'] =    'api/v1/user/product_list';
+$route['api/v1/product.add'] =     'api/v1/user/product_add';
+$route['api/v1/product.detail'] =  'api/v1/user/product_detail';
+$route['api/v1/product.edit'] =    'api/v1/user/product_edit';
+$route['api/v1/product.delete'] =  'api/v1/user/product_delete';
+
 #RESTs
 #Role
 $route['rest/v1/role.list'] = 'rest/v1/user/role_list';
