@@ -86,6 +86,8 @@ $route['api/v1/product.edit'] =    'api/v1/user/product_edit';
 $route['api/v1/product.delete'] =  'api/v1/user/product_delete';
 
 #RESTs
+#Index
+$route['rest/v1'] = 'rest/v1/user/index';
 #Role
 $route['rest/v1/role.list'] = 'rest/v1/user/role_list';
 $route['rest/v1/role.add'] = 'rest/v1/user/role_add';

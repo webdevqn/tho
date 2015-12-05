@@ -187,5 +187,13 @@ class User_model extends CI_Model
         $fields = $this->db->field_data('users');
         return $fields;
     }
-
+    
+    public function user_table_full_structure() {
+        $fields = $this->db->query("desc users");   
+        return $fields->result();
+    }
+    public function role_table_full_structure() {
+        $fields = $this->db->query("desc roles");   
+        return $fields->result();
+    }
 }

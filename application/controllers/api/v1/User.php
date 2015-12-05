@@ -13,65 +13,8 @@ class User extends CI_Controller
 
     public function index()
     {
-        echo 23423;
-    }
-
-    public function test()
-    {
-        $output = array(
-                'code' => 200,
-                'status' => "SUCCESS",
-                'message' => 'API works well',
-                'data' => array(
-                        array(
-                                'id' => 113,
-                                'user_name' => 'Vu',
-                                'email' => 'vu@thodaico.vn',
-                                'status' => 'active',
-                                'role' => 'admin',
-                                'created_date' => 1231341241,
-                                'updated_date' => 1231341241,
-                                'last_activity' => 352342342,
-                                'created_by' => 113
-                        ),
-                        array(
-                                'id' => 114,
-                                'user_name' => 'Bao',
-                                'email' => 'bao@thodaico.vn',
-                                'status' => 'active',
-                                'role' => 'admin',
-                                'created_date' => 1231341241,
-                                'updated_date' => 1231341241,
-                                'last_activity' => 352342342,
-                                'created_by' => 113
-                        ),
-                        array(
-                                'id' => 115,
-                                'user_name' => 'Da',
-                                'email' => 'da@thodaico.vn',
-                                'status' => 'active',
-                                'role' => 'admin',
-                                'created_date' => 1231341241,
-                                'updated_date' => 1231341241,
-                                'last_activity' => 352342342,
-                                'created_by' => 113
-                        )
-                )
-        );
-        $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($output, JSON_NUMERIC_CHECK));
-    }
-
-    public function user_check()
-    {
-        if ($this->input->is_ajax_request())
-        {
-            $request = $this->input->post(NULL, TRUE);
-            $this->output
-                    ->set_content_type('application/json')
-                    ->set_output(json_encode($request, JSON_NUMERIC_CHECK));
-        }
+        $response = $this->User_model->user_table_full_structure();
+        print_r($response);die;
     }
 
     public function role_list()
@@ -318,8 +261,8 @@ class User extends CI_Controller
         $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode($output, JSON_NUMERIC_CHECK));
-    }
-
+    }    
+    
     public function user_add()
     {
         $input = array();

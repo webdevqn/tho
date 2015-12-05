@@ -187,5 +187,14 @@ class Product_model extends CI_Model
         $fields = $this->db->field_data('products');
         return $fields;
     }
+    
+    public function category_table_full_structure() {
+        $fields = $this->db->query("desc categories");   
+        return $fields->result();
+    }
+    public function product_table_full_structure() {
+        $fields = $this->db->query("desc products");   
+        return $fields->result();
+    }
 
 }

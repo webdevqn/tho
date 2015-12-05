@@ -10,10 +10,10 @@ class User extends CI_Controller {
     }
     
     public function index() {
-        $data['roles'] = $this->User_model->role_table_structure();
-        $data['users'] = $this->User_model->user_table_structure();
-        $data['categories'] = $this->Product_model->category_table_structure();
-        $data['products'] = $this->Product_model->product_table_structure();
+        $data['roles'] = $this->User_model->role_table_full_structure();
+        $data['users'] = $this->User_model->user_table_full_structure();
+        $data['categories'] = $this->Product_model->category_table_full_structure();
+        $data['products'] = $this->Product_model->product_table_full_structure();
         $this->load->view('rest/v1/user/index', $data);
     }
 
