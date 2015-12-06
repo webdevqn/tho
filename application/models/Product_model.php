@@ -45,20 +45,21 @@ class Product_model extends CI_Model
         }
         else
         {
-            return 400;
+            return '400';
         }
     }
 
     public function category_add($input)
     {
         $query = $this->db->insert('categories', $input);
-        if ($query)
+        $insert_id = $this->db->insert_id();
+        if ($insert_id !== null || $insert_id !== "")
         {
-            return 200;
+            return intval($insert_id);
         }
         else
         {
-            return 400;
+            return '400';
         }
     }
 
@@ -129,7 +130,7 @@ class Product_model extends CI_Model
         }
         else
         {
-            return 400;
+            return '400';
         }
     }
 
@@ -137,13 +138,14 @@ class Product_model extends CI_Model
     {
 
         $query = $this->db->insert('products', $input);
-        if ($query)
+        $insert_id = $this->db->insert_id();
+        if ($insert_id !== null || $insert_id !== "")
         {
-            return 200;
+            return intval($insert_id);
         }
         else
         {
-            return 400;
+            return '400';
         }
     }
 

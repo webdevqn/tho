@@ -59,14 +59,27 @@ class Product extends CI_Controller
         if (check_input_element_valid($input))
         {
             $request = $this->Product_model->category_add($input);
-            if ($request == 200)
+            if ($request !== '400')
             {
-                $output = array(
-                    'code' => $request,
-                    'status' => 'SUCCESS',
-                    'message' => 'Add category successfully',
-                    'data' => array($input)
-                );
+                $request1 = $this->Product_model->category_detail($request);
+                if ($request1 !== '400')
+                {
+                    $output = array(
+                        'code' => '200',
+                        'status' => 'SUCCESS',
+                        'message' => 'Add category successfully',
+                        'data' => $request1
+                    );
+                }
+                else
+                {
+                    $output = array(
+                        'code' => $request,
+                        'status' => 'FAILED',
+                        'message' => 'Add category failed',
+                        'data' => $input
+                    );
+                }
             }
             else
             {
@@ -101,10 +114,10 @@ class Product extends CI_Controller
             if ($request == 200)
             {
                 $request1 = $this->Product_model->category_detail($id);
-                if ($request1 != 400)
+                if ($request1 !== '400')
                 {
                     $output = array(
-                        'code' => $request,
+                        'code' => '200',
                         'status' => 'SUCCESS',
                         'message' => 'Category detail',
                         'data' => $this->Product_model->category_detail($id)
@@ -113,7 +126,7 @@ class Product extends CI_Controller
                 else
                 {
                     $output = array(
-                        'code' => $request,
+                        'code' => '400',
                         'status' => 'FAILED',
                         'message' => 'Failed to get category detail',
                         'data' => array('id' => $id)
@@ -209,14 +222,24 @@ class Product extends CI_Controller
                 $request1 = $this->Product_model->category_edit($id, $input);
                 if ($request1 == 200)
                 {
-                    $output = array(
-                        'code' => $request,
-                        'status' => 'SUCCESS',
-                        'message' => 'Update category successfully',
-                        'data' => array(
-                            'id' => $id
-                        )
-                    );
+                    $request2 = $this->Product_model->category_detail($id);
+                    if ($request2 !== '400')
+                    {
+                        $output = array(
+                            'code' => $request,
+                            'status' => 'SUCCESS',
+                            'message' => 'Update category successfully',
+                            'data' => $request2
+                        );
+                    }
+                    else
+                    {
+                        $output = array(
+                            'code' => $request,
+                            'status' => 'FAILED',
+                            'message' => 'SERVER ERROR'
+                        );
+                    }
                 }
                 else
                 {

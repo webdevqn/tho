@@ -14,7 +14,7 @@ class User extends CI_Controller {
         $data['users'] = $this->User_model->user_table_full_structure();
         $data['categories'] = $this->Product_model->category_table_full_structure();
         $data['products'] = $this->Product_model->product_table_full_structure();
-        $this->load->view('rest/v1/user/index', $data);
+        $this->load->view('rest/v1/user/rest_list', $data);
     }
 
 }
