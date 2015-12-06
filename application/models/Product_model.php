@@ -49,13 +49,8 @@ class Product_model extends CI_Model
         }
     }
 
-    public function category_add($title)
+    public function category_add($input)
     {
-        $input = array(
-                'title' => $title,
-                'created_at' => time(),
-                'updated_at' => time()
-        );
         $query = $this->db->insert('categories', $input);
         if ($query)
         {
@@ -67,12 +62,8 @@ class Product_model extends CI_Model
         }
     }
 
-    public function category_edit($id, $title)
+    public function category_edit($id, $input)
     {
-        $input = array(
-                'title' => $title,
-                'updated_at' => time()
-        );
         $query = $this->db->update('categories', $input, array('id' => $id));
         if ($query)
         {
