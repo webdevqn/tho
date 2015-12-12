@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Walkway_Oblique';
+  src: url('fonts/Walkway_Oblique.ttf');  
+  font-weight: normal;
+  font-style: normal;
+}
+body
+{
+    font-family: Tahoma;
+    font-size: 16px;
+}
