@@ -26,10 +26,10 @@
                         }
                         ?>
                         <td><a href="/admin/manage/role/detail/<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></td>
-                        <td><a href="/admin/manage/role/detail/<?php echo $item['id']; ?>"><?php echo $item['status']; ?></a></td>
-                        <td><a href="/admin/manage/role/detail/<?php echo $item['id']; ?>"><?php echo $item['created_by']; ?></a></td>
+                        <td><?php echo $item['status']; ?></td>
+                        <td><?php echo $item['created_by']; ?></td>
                         <td>
-                            <a href="/admin/manage/role/detail/<?php echo $item['id']; ?>" title="Detail"><i class="fa fa-plus"></i></a>
+                            <a href="/admin/manage/role/detail/<?php echo $item['id']; ?>" title="Detail"><i class="fa fa-eye"></i></a>
                             <a href="/admin/manage/role/edit/<?php echo $item['id']; ?>" title="Update"><i class="fa fa-edit"></i></a>
                             <a href="/admin/manage/role/delete/<?php echo $item['id']; ?>" title="Delete"><i class="fa fa-remove"></i></a>
                         </td>
@@ -39,7 +39,7 @@
         </table>
     </div><!-- /.box-body -->
     <div class="box-footer">
-        <a class="btn bg-purple btn-flat" href="/admin/manage/role/add">Thêm chức vụ</a>
+        <a class="btn bg-purple btn-flat" href="/admin/manage/role/add"><i class="fa fa-plus"> Thêm chức vụ</i></a>
     </div>
 </div><!-- /.box -->
 

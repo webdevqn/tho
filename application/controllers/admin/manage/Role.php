@@ -9,7 +9,8 @@ class Role extends MY_Controller
     {
         $content = $this->Role_model->get_all_role();
 
-        $data['header'] = "Role";
+        $data['header'] = "Quản lí chức vụ | Danh sách";
+        $data['title'] = "Thodaico | ".$data['header'];
         $data['content'] = $content;
         $this->setPage('admin/role/index', $data);
     }
@@ -23,8 +24,9 @@ class Role extends MY_Controller
 
             if ($content)
             {
-                $data['header'] = "Role";
+                $data['header'] = "Quản lí chức vụ | Thông tin chi tiết";
                 $data['content'] = $content;
+                $data['title'] = "Thodaico | ".$data['header'];
                 $this->setPage('admin/role/detail', $data);
             }
             else
@@ -43,7 +45,7 @@ class Role extends MY_Controller
         $rules = [
             [
                 'field' => 'title',
-                'label' => 'Title',
+                'label' => 'tên chức vụ',
                 'rules' => 'required'
             ]
         ];
@@ -76,7 +78,8 @@ class Role extends MY_Controller
                 redirect('admin/manage/role/detail/' . $createdId);
             }
         }
-        $data['header'] = "Role";
+        $data['header'] = "Quản lí chức vụ | Thêm";
+        $data['title'] = "Thodaico | ".$data['header'];
         $this->setPage($page, $data);
     }
 
@@ -127,8 +130,9 @@ class Role extends MY_Controller
                     }
                 }
 
-                $data['header'] = "Role";
+                $data['header'] = "Quản lí chức vụ | Chỉnh sửa";
                 $data['content'] = $content;
+                $data['title'] = "Thodaico | ".$data['header'];
                 $this->setPage('admin/role/edit', $data);
             }
             else

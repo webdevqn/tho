@@ -243,9 +243,9 @@
 
                     <!-- Your Page Content Here -->  
                     <?php
-                    echo validation_errors('<div class="alert alert-warning alert-dismissable">
+                    echo validation_errors('<div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>', '</div>');
+                    <h4><i class="icon fa fa-ban"></i> Thông báo có lỗi!</h4>', '</div>');
                     echo isset($magicgroup_employees_message) ? $magicgroup_employees_message : '';
                     if ($content)
                         echo $content;

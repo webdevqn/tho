@@ -4,7 +4,7 @@ echo $this->session->flashdata('error');
 
 <div class="box box-purple">
     <div class="box-header with-border">
-        <h3 class="box-title">Chỉnh sửa thông tin: <?php echo $content[0]['title']; ?></h3>
+        <h3 class="box-title">Chỉnh sửa chức vụ: <?php echo $content[0]['title']; ?></h3>
     </div><!-- /.box-header -->
     <!-- form start -->
     <?php echo form_open('/admin/manage/role/edit/' . $content[0]['id']); ?>
