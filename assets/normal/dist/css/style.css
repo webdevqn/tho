@@ -1,11 +1,15 @@
-@font-face {
-  font-family: 'Walkway_Oblique';
-  src: url('fonts/Walkway_Oblique.ttf');  
-  font-weight: normal;
-  font-style: normal;
-}
 body
 {
     font-family: Tahoma;
-    font-size: 16px;
+}
+a{
+    color: #605ca8;
+}
+a:hover
+{
+    color: navy;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+    background-color: #605ca8;
+    border-color: #605ca8;
 }
