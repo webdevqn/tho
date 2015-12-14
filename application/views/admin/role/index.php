@@ -18,11 +18,11 @@
                         <?php
                         if ($item['status'] == 'active')
                         {
-                            $item['status'] = 'Kích hoạt';
+                            $item['status'] = 'Đã kích hoạt';
                         }
                         else
                         {
-                            $item['status'] = 'Vô hiệu';
+                            $item['status'] = 'Đã vô hiệu';
                         }
                         ?>
                         <td><a href="/admin/manage/role/detail/<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></td>
@@ -39,7 +39,7 @@
         </table>
     </div><!-- /.box-body -->
     <div class="box-footer">
-        <a class="btn bg-purple btn-flat" href="/admin/manage/role/add"><i class="fa fa-plus"> Thêm chức vụ</i></a>
+        <a class="btn bg-purple btn-flat" href="/admin/manage/role/add"><i class="fa fa-plus"></i>Thêm chức vụ</a>
     </div>
 </div><!-- /.box -->
 
