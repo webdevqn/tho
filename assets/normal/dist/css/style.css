@@ -1,0 +1,15 @@
+body
+{
+    font-family: Tahoma;
+}
+a{
+    color: #605ca8;
+}
+a:hover
+{
+    color: navy;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+    background-color: #605ca8;
+    border-color: #605ca8;
+}

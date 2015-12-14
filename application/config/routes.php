@@ -85,6 +85,9 @@ $route['api/v1/product.detail'] =  'api/v1/product/product_detail';
 $route['api/v1/product.edit'] =    'api/v1/product/product_edit';
 $route['api/v1/product.delete'] =  'api/v1/product/product_delete';
 
+#Libs
+$route['api/v1/domain.list'] = 'api/v1/libs/domain_list';
+
 #RESTs
 #Index
 $route['rest/v1'] = 'rest/v1/user/index';
@@ -94,3 +97,5 @@ $route['rest/v1/role.add'] = 'rest/v1/user/role_add';
 $route['rest/v1/role.detail'] = 'rest/v1/user/role_detail';
 $route['rest/v1/role.edit'] = 'rest/v1/user/role_edit';
 $route['rest/v1/role.delete'] = 'rest/v1/user/role_delete';
+
+
